@@ -46,7 +46,7 @@ export default {
       :close="close"
       :success="success"
       :user="{fullname: 'USER_FULL_NAME', email: 'USER_EMAIL', bvn: 'USER_BVN'}"
-      products="['auth', 'transactions', 'balance', 'income', 'identity']"
+      :products="['auth', 'transactions', 'balance', 'income', 'identity']"
     />
   ```
 
