@@ -18,6 +18,14 @@ export default {
       type: String,
       required: true
     },
+    token : {
+      type: String,
+      required: true
+    },
+    products : {
+      type: [],
+      required: true
+    },
     okra_key: {
       type: String,
       required: true
@@ -68,7 +76,6 @@ export default {
       script.src = "https://cdn.okra.ng/okra.min.js";
       document.getElementsByTagName("head")[0].appendChild(script);
       if (script.readyState) {
-        // IE
         script.onreadystatechange = () => {
           if (
             script.readyState === "loaded" ||
@@ -92,13 +99,14 @@ export default {
             env: this.env,
             clientName: this.clientName,
             key: this.okra_key,
-            callback_url: this.callback_url,
+            token : this.token,
+            callback_url: this.callback_url, 
             user: {
               fullname:  this.user.fullname,
               email: this.user.email,
               bvn: this.user.bvn
             },
-            products: ["auth", "transactions", "balance", "income", "identity"],
+            products: this.products,
             onSuccess: () => {
               this.success();
             },
