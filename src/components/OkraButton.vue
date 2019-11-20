@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="okra-enabled">
     <button @click="openOkraWidget">{{ text }}</button>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
       required: true
     },
     products : {
-      type: [],
+      type: Array,
       required: true
     },
     okra_key: {
@@ -70,12 +70,13 @@ export default {
       window.document.head.appendChild(link);
       link.setAttribute('rel', 'stylesheet');
       link.setAttribute('type', 'text/css');
-      link.setAttribute('href', 'https://cdn.okra.ng/okra.min.css');
+      link.setAttribute('href', 'https://cdn.okra.ng/okra.css');
 
       const script = document.createElement("script");
       script.src = "https://cdn.okra.ng/okra.min.js";
       document.getElementsByTagName("head")[0].appendChild(script);
       if (script.readyState) {
+        // IE
         script.onreadystatechange = () => {
           if (
             script.readyState === "loaded" ||
@@ -93,9 +94,7 @@ export default {
     },
 
     openOkraWidget() {
-      this.scriptLoaded &&
-        this.scriptLoaded.then(() => {
-          var client = new window.okra.create({
+      const options = {
             env: this.env,
             clientName: this.clientName,
             key: this.okra_key,
@@ -113,8 +112,11 @@ export default {
             onClose: () => {
               this.close();
             }
-          });
-          client.open();
+          }
+      this.scriptLoaded &&
+        this.scriptLoaded.then(() => {
+          var client = new window.okra.create();
+          client.open(options);
         });
     }
   }
