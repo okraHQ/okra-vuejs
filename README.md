@@ -81,7 +81,7 @@ export default {
 |  `key `               | `String`       | true                |  undefined          | Your public key from Okra.
 |  `token `             | `String`       | true                |  undefined          | Your client token on the [setting page of the okra dashboard](https://dashboard.okra.ng/settings/keys.)
 |  `products`           | `ArrayList<Enums.Product>`| true     |  undefined          | The Okra products you want to use with the widget. list of products include: 'auth', 'transactions', 'balance', 'income', 'identity'
-|  `env`                | `String`       | true                |  https: production/ http: sandbox |  `production` or `production-sandbox`
+|  `env`                | `String`       | true                |  https uses `production` and http uses `sandbox-production` |  `production` or `production-sandbox`
 |  `clientName`         | `String`       | false               |  `This client`      | Name of the customer using the widget on the application
 |  `user`               | `object`       | false               |  undefined          | This contains some information of the user using the okra widget {fullname: 'USER_FULL_NAME',email: 'USER_EMAIL', bvn: 'USER_BVN'}
 
