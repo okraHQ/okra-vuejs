@@ -105,7 +105,7 @@ export default {
               email: this.user.email,
               bvn: this.user.bvn
             },
-            products: this.products,
+            products: JSON.stringify(this.products),
             onSuccess: () => {
               this.success();
             },
