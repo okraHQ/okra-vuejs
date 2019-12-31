@@ -18,11 +18,11 @@ export default {
       type: String,
       required: true
     },
-    token : {
+    token: {
       type: String,
       required: true
     },
-    products : {
+    products: {
       type: Array,
       required: true
     },
@@ -65,15 +65,14 @@ export default {
   },
   methods: {
     loadScript(callback) {
-
-      const link = window.document.createElement('link');
+      const link = window.document.createElement("link");
       window.document.head.appendChild(link);
-      link.setAttribute('rel', 'stylesheet');
-      link.setAttribute('type', 'text/css');
-      link.setAttribute('href', 'https://cdn.okra.ng/okra.css');
+      link.setAttribute("rel", "stylesheet");
+      link.setAttribute("type", "text/css");
+      link.setAttribute("href", "https://cdn.okra.ng/okra.css");
 
       const script = document.createElement("script");
-      script.src = "https://cdn.okra.ng/okra.min.js";
+      script.src = "https://dev-cdn.okra.ng/okra.min.js";
       document.getElementsByTagName("head")[0].appendChild(script);
       if (script.readyState) {
         // IE
@@ -95,24 +94,27 @@ export default {
 
     openOkraWidget() {
       const options = {
-            env: this.env,
-            clientName: this.clientName,
-            key: this.okra_key,
-            token : this.token,
-            callback_url: this.callback_url, 
-            user: {
-              fullname:  this.user.fullname,
-              email: this.user.email,
-              bvn: this.user.bvn
-            },
-            products: JSON.stringify(this.products),
-            onSuccess: () => {
-              this.success();
-            },
-            onClose: () => {
-              this.close();
-            }
+        env: this.env,
+        clientName: this.clientName,
+        key: this.okra_key,
+        token: this.token,
+        callback_url: this.callback_url,
+        source: "vue",
+        options: {
+          user: {
+            fullname: this.user.fullname,
+            email: this.user.email,
+            bvn: this.user.bvn
           }
+        },
+        products: this.products,
+        onSuccess: () => {
+          this.success();
+        },
+        onClose: () => {
+          this.close();
+        }
+      };
       this.scriptLoaded &&
         this.scriptLoaded.then(() => {
           var client = new window.okra.create();
