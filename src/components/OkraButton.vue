@@ -72,7 +72,7 @@ export default {
       link.setAttribute("href", "https://cdn.okra.ng/okra.css");
 
       const script = document.createElement("script");
-      script.src = "https://dev-cdn.okra.ng/okra.min.js";
+      script.src = "https://cdn.okra.ng/okra.min.js";
       document.getElementsByTagName("head")[0].appendChild(script);
       if (script.readyState) {
         // IE
