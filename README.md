@@ -13,7 +13,7 @@ In your `app.vue` or any module where the component would be used like so:
 
 ```vue
 <script>
-import OkraButton from "./components/OkraButton.vue";
+import OkraButton from "vue-okra/src/components/OkraButton";
 
 export default {
   name: "app",
