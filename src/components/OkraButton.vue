@@ -108,11 +108,11 @@ export default {
           }
         },
         products: this.products,
-        onSuccess: () => {
-          this.success();
+        onSuccess: (json) => {
+          this.success(json);
         },
-        onClose: () => {
-          this.close();
+        onClose: (json) => {
+          this.close(json);
         }
       };
       this.scriptLoaded &&
