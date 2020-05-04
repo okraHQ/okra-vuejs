@@ -14,6 +14,72 @@ export default {
       type: String,
       required: true
     },
+    color: {
+      type: String,
+      required: false
+    },
+    limit: {
+      type: String,
+      required: false
+    },
+    corporate: {
+      type: Boolean,
+      required: false
+    },
+    options: {
+      type: Object,
+      default: function() {
+        return {};
+      }
+    },
+    connectMessage: {
+      type: String,
+      required: false
+    },
+    redirect_url: {
+      type: String,
+      required: false
+    },
+    logo: {
+      type: String,
+      required: false
+    },
+    widget_success: {
+      type: String,
+      required: false
+    },
+    currency: {
+      type: String,
+      required: false
+    },
+    exp: {
+      type: String,
+      required: false
+    },
+    success_title: {
+      type: String,
+      required: false
+    },
+    success_message: {
+      type: String,
+      required: false
+    },
+    guarantors: {
+      type: Object,
+      default: function() {
+        return {
+          status: false,
+          message: "Please add your gaurantor",
+          number: "2"
+        };
+      }
+    },
+    filter: {
+      type: Object,
+      default: function() {
+        return {};
+      }
+    },
     clientName: {
       type: String,
       required: true
@@ -100,18 +166,25 @@ export default {
         token: this.token,
         callback_url: this.callback_url,
         source: "vue",
-        options: {
-          user: {
-            fullname: this.user.fullname,
-            email: this.user.email,
-            bvn: this.user.bvn
-          }
-        },
+        color: this.color,
+        limit: this.limit,
+        options: this.options,
+        connectMessage: this.connectMessage,
+        redirect_url: this.redirect_url,
+        logo: this.logo,
+        widget_success: this.widget_success,
+        currency: this.currency,
+        exp: this.exp,
+        success_title: this.success_title,
+        success_message: this.success_message,
+        guarantors: this.guarantors,
+        filter: this.filter,
+        corporate: this.corporate,
         products: this.products,
-        onSuccess: (json) => {
+        onSuccess: json => {
           this.success(json);
         },
-        onClose: (json) => {
+        onClose: json => {
           this.close(json);
         }
       };
