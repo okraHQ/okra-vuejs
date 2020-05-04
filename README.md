@@ -38,28 +38,28 @@ export default {
   ```html
     <OkraButton
       text="Open Okra"
-      token="5d8a35224d8113507c7521ac"
-      env="sandbox"
-      clientName="Chikala"
-      okra_key="c81f3e05-7a5c-5727-8d33-1113a3c7a5e4"
-      callback_url="www.google.com"
-      color="#b0c77f"
-      limit="24"
-      corporate=false
-      connectMessage=""
-      redirect_url=""
-      logo=""
-      widget_success=""
-      currency=""
-      exp=""
-      success_title=""
-      success_message=""
-      :guarantors="{status: false, message: 'Please add your gaurantor',number: '2'}",
-      :filter= "{'industry_type':'all','banks':['ecobank-nigeria','fidelity-bank','first-bank-of-nigeria','first-city-monument-bank','guaranty-trust-bank','heritage-bank','polaris-bank','stanbic-ibtc-bank','standard-chartered-bank','sterling-bank','union-bank-of-nigeria','united-bank-for-africa','wema-bank','unity-bank','alat','access-bank']}",
-      :close="close"
-      :success="success"
-      :options="{fullname: 'USER_FULL_NAME', email: 'USER_EMAIL', bvn: 'USER_BVN'}"
-      :products="['auth', 'transactions', 'balance', 'income', 'identity']"
+    token="5d8a35224d8113507c7521ac"
+    env="production"
+    clientName="Chikala"
+    okra_key="c81f3e05-7a5c-5727-8d33-1113a3c7a5e4"
+    callback_url="www.google.com"
+    color="#b0c77f"
+    limit="24"
+    :corporate=false
+    connectMessage=""
+    redirect_url=""
+    logo=""
+    widget_success=""
+    currency=""
+    exp=""
+    success_title=""
+    success_message=""
+    :guarantors="{'status': false, 'message': 'Please add your gaurantor','number': '2'}"
+    :filter= "{'industry_type':'all','banks':['ecobank-nigeria','fidelity-bank','first-bank-of-nigeria','first-city-monument-bank','guaranty-trust-bank','heritage-bank','polaris-bank','stanbic-ibtc-bank','standard-chartered-bank','sterling-bank','union-bank-of-nigeria','united-bank-for-africa','wema-bank','unity-bank','alat','access-bank']}"
+    :close="close"
+    :success="success"
+    :options="{fullname: 'USER_FULL_NAME', email: 'USER_EMAIL', bvn: 'USER_BVN'}"
+    :products="['auth', 'transactions', 'balance', 'income', 'identity']"
     />
   ```
 
