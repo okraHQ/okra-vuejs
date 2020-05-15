@@ -50,6 +50,7 @@ export default {
     redirect_url=""
     logo=""
     widget_success=""
+    widget_failed=""
     currency=""
     exp=""
     success_title=""
