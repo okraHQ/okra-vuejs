@@ -172,7 +172,7 @@ export default {
         connectMessage: this.connectMessage,
         redirect_url: this.redirectUrl,
         logo: this.logo,
-        widget_success: this.widgetUuccess,
+        widget_success: this.widgetSuccess,
         currency: this.currency,
         exp: this.exp,
         success_title: this.successTitle,
