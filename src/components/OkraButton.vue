@@ -36,7 +36,7 @@ export default {
       type: String,
       required: false
     },
-    redirect_url: {
+    redirectUrl: {
       type: String,
       required: false
     },
@@ -44,7 +44,7 @@ export default {
       type: String,
       required: false
     },
-    widget_success: {
+    widgetSuccess: {
       type: String,
       required: false
     },
@@ -56,11 +56,11 @@ export default {
       type: String,
       required: false
     },
-    success_title: {
+    successTitle: {
       type: String,
       required: false
     },
-    success_message: {
+    successMessage: {
       type: String,
       required: false
     },
@@ -92,11 +92,11 @@ export default {
       type: Array,
       required: true
     },
-    okra_key: {
+    okraKey: {
       type: String,
       required: true
     },
-    callback_url: {
+    callbackUrl: {
       type: String,
       required: true
     },
@@ -162,21 +162,21 @@ export default {
       const options = {
         env: this.env,
         clientName: this.clientName,
-        key: this.okra_key,
+        key: this.okraKey,
         token: this.token,
-        callback_url: this.callback_url,
+        callback_url: this.callbackUrl,
         source: "vue",
         color: this.color,
         limit: this.limit,
         options: this.options,
         connectMessage: this.connectMessage,
-        redirect_url: this.redirect_url,
+        redirect_url: this.redirectUrl,
         logo: this.logo,
-        widget_success: this.widget_success,
+        widget_success: this.widgetUuccess,
         currency: this.currency,
         exp: this.exp,
-        success_title: this.success_title,
-        success_message: this.success_message,
+        success_title: this.successTitle,
+        success_message: this.successMessage,
         guarantors: this.guarantors,
         filter: this.filter,
         corporate: this.corporate,
