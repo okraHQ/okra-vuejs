@@ -90,13 +90,26 @@ export default {
 
 |Name                   | Type           | Required            | Default Value       | Description         |
 |-----------------------|----------------|---------------------|---------------------|---------------------|
-|  `callback_url `      | `string`       | true                |  undefined          | This is your webhook to which okra sends the clients data to.
+|  `callback-url `      | `string`       | true                |  undefined          | This is your webhook to which okra sends the clients data to.
 |  `key `               | `String`       | true                |  undefined          | Your public key from Okra.
 |  `token `             | `String`       | true                |  undefined          | Your client token on the [setting page of the okra dashboard](https://dashboard.okra.ng/settings/keys)
 |  `products`           | `ArrayList<Enums.Product>`| true     |  undefined          | The Okra products you want to use with the widget. list of products include: 'auth', 'transactions', 'balance', 'income', 'identity'
 |  `env`                | `String`       | true                |  https uses `production` and http uses `sandbox-production` |  `production` or `production-sandbox`
-|  `clientName`         | `String`       | false               |  `This client`      | Name of the customer using the widget on the application
-|  `user`               | `object`       | false               |  undefined          | This contains some information of the user using the okra widget {fullname: 'USER_FULL_NAME',email: 'USER_EMAIL', bvn: 'USER_BVN'}
+|  `client-name`         | `String`       | false               |  `This client`      | Name of the customer using the widget on the application
+|  `logo `              | `String(URL)`  | false               | Okra's Logo         | 
+|  `color`              | `HEX   `       | false               | #3AB795             | Theme on the widget 
+|  `limit`              | `Number`       | false               | 24                  | Statement length
+|  `filter`             | `Object`       | false               |                     | Filter for widget
+|  `corporate`          | `Boolen`       | false               | `false`             | Corporate or Individual account
+|  `connect-message`    | `String`       | false               |                     | Instruction to connnect account
+|  `guarantors          | `Object`       | false               |                     | 
+|  `widget-success`     | `String`       | false               |                     | Widget Success Message
+|  `widget-failed`      | `String`       | false               |                     | Widget Failed Message
+|  `currency`           | `String`       | false               | NGN                 | Wallet to bill
+|  `exp`                | `Date`         | false               | Won't expire        | Expirary date of widget
+|  `options`            | `Object`       | false               |                     | You can pass a object custom values eg id
+|  `success`            | `Function`     | false               |                     | Action to perform after widget is successful
+|  `close`              | `Function`     | false               |                     | Action to perform if widget is closed
 
 
 ## Data Dictionary
