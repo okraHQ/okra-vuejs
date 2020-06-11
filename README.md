@@ -93,7 +93,7 @@ export default {
 |  `callback-url `      | `string`       | true                |  undefined          | This is your webhook to which okra sends the clients data to.
 |  `key `               | `String`       | true                |  undefined          | Your public key from Okra.
 |  `token `             | `String`       | true                |  undefined          | Your client token on the [setting page of the okra dashboard](https://dashboard.okra.ng/settings/keys)
-|  `products`           | `ArrayList<Enums.Product>`| true     |  undefined          | The Okra products you want to use with the widget. list of products include: 'auth', 'transactions', 'balance', 'income', 'identity'
+|  `products`           | `Array`| true     |  `['Auth']`          | The Okra products you want to use with the widget. list of products include: 'auth', 'transactions', 'balance', 'income', 'identity'
 |  `env`                | `String`       | true                |  https uses `production` and http uses `sandbox-production` |  `production` or `production-sandbox`
 |  `client-name`         | `String`       | false               |  `This client`      | Name of the customer using the widget on the application
 |  `logo `              | `String(URL)`  | false               | Okra's Logo         | 
